@@ -1,0 +1,293 @@
+:root {
+	/*background colors*/
+	--background-main: #0c4a6e;
+	--background-color-points-mod: #0ea5e9;
+	--background-counter: #1f2937;
+	--background-color-foul: #b45309;
+	--border-color: #6b7280;
+
+	/*text color*/
+	--text-color-main: #ffe4e6;
+	--text-color-foul: #f0f9ff;
+	--text-color-counter: #e11d48;
+
+	/*button color*/
+	--button-color-main: #4c1d95;
+	--button-color-hover: #6d28d9;
+	--button-color-active: #7c3aed;
+	--button-color-fouls: #881337;
+	--button-hover-fouls: #9f1239;
+	--button-active-fouls: #be123c;
+	--button-color-extra: #4c1d95;
+	--button-extra-hover: #6d28d9;
+	--button-extra-active-start: #10b981;
+	--button-extra-active-stop: #be123c;
+	--button-extra-active-reset: #fbbf24;
+
+	/*shadow color*/
+	--shadow-button-main: #0369a1;
+	--shadow-button-foul: #78350f;
+	--shadow-button-extra: #1F2937;
+}
+
+* {
+	box-sizing: border-box;
+	text-align: center;
+	cursor: default;
+}
+
+p {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	background: var(--background-main);
+	color: var(--text-color-main);
+	font-family: Roboto, sans-serif;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 2fr 1fr 2fr;
+	padding: 20px;
+}
+
+/* Score containers properties: color/border/font/size */
+.points-con {
+	background-color: var(--background-counter);
+	color: var(--text-color-counter);
+	border: 5px solid var(--border-color);
+	border-radius: 7px;
+	font: 4rem "Cursed Timer ULiL", Roboto;
+	height: 50vh;
+	width: 35vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px auto;
+}
+
+/* Paragraphs inside the .points-con */
+.points-con > p {
+	margin: 0;
+}
+
+/* Basically the score-btn container */
+.points-mod {
+	display: flex;
+	width: fit-content;
+	height: 10vh;
+	background-color: var(--background-color-points-mod);
+	margin: 10px auto;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+
+/* .points-btn and the respective animations */
+.points-btn {
+	margin: 0 5px;
+	background-color: var(--button-color-main);
+	color: var(--text-color-main);
+	border: none;
+	border-radius: 6px;
+	box-shadow: var(--shadow-button-main) 1px 3px 1px;
+	transition: all 0.15s;
+}
+
+.points-btn:hover {
+	background-color: var(--button-color-hover);
+	box-shadow: var(--shadow-button-main) 3px 3px 1px;
+	cursor: pointer;
+}
+
+.points-btn:active {
+	background-color: var(--button-color-active);
+	box-shadow: none;
+}
+
+/* .fouls container : color/border/spacing/size */
+.fouls {
+	background-color: var(--background-color-foul);
+	border-radius: 7px;
+	margin: auto;
+	margin-top: 20px;
+	padding: 10px 5px;
+	height: 13vh;
+	width: 30vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#guest-fouls,
+#home-fouls {
+	padding: 6px 10px;
+	margin-top: 3px;
+	color: var(--text-color-foul);
+	background-color: var(--button-color-fouls);
+	box-shadow: var(--shadow-button-foul) 1px 2px 2px;
+	border: none;
+	border-radius: 5px;
+	transition: all 0.15s;
+}
+
+.fouls > p {
+	margin-bottom: 1vh;
+}
+
+#guest-fouls:hover,
+#home-fouls:hover {
+	background-color: var(--button-hover-fouls);
+	box-shadow: var(--shadow-button-foul) 3px 2px 1px;
+	cursor: pointer;
+}
+
+#guest-fouls:active,
+#home-fouls:active {
+	background-color: var(--button-active-fouls);
+	box-shadow: none;
+}
+
+/* Extras container properties: color/border/font/size */
+#extras {
+	background-color: #0369a1;
+	border-radius: 8px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 400px;
+	opacity: 0.75;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#timer-text {
+	background-color: var(--background-counter);
+	color: var(--text-color-counter);
+	border: 5px solid var(--border-color);
+	border-radius: 7px;
+	font: 4rem "Cursed Timer ULiL", Roboto;
+	height: 16vh;
+	margin: auto;
+	padding: 6% 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.timer-con {
+	margin: auto;
+}
+
+/* Extras Buttons */
+#timer-start-btn,
+#timer-stop-btn,
+#timer-reset-btn,
+#reset-btn {
+	background-color: var(--button-color-extra);
+	color: var(--text-color-main);
+	border: none;
+	border-radius: 5px;
+	box-shadow: var(--shadow-button-main) 2px 2px 1px;
+	transition: all 0.15s;
+	padding: 5px 10px;
+	margin: 5px auto;
+}
+
+#timer-start-btn:hover,
+#timer-stop-btn:hover,
+#timer-reset-btn:hover,
+#reset-btn:hover {
+	background-color: var(--button-extra-hover);
+	box-shadow: var(--shadow-button-extra) 3px 2px 1px;
+	cursor: pointer;
+}
+
+#timer-start-btn:active {
+	background-color: var(--button-extra-active-start);
+	box-shadow: none;
+}
+
+#timer-stop-btn:active {
+	background-color: var(--button-extra-active-stop);
+	box-shadow: none;
+}
+
+#timer-reset-btn:active {
+	background-color: var(--button-extra-active-reset);
+	box-shadow: none;
+}
+
+#reset-btn:active {
+	background-color: var(--button-extra-active-reset);
+	color: black;
+	box-shadow: none;
+}
+
+/* Media queries */
+@media screen and (max-width: 1024px) {
+	.container{
+		grid-template-columns: 1fr;
+	}
+
+	.points-con {
+		width: 45vw;
+		height: 30vh;
+	}
+
+	.fouls {
+		width: 45vw;
+	}
+
+	#timer-text {
+		font-size: 2rem;
+		height: 10vh;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.points-con,
+	.fouls {
+		width: 80vw;
+	}
+
+	#extras {
+		width: 90%;
+	}
+
+	#timer-text {
+		font-size: 1.5rem;
+		height: 12vh;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.points-con,
+	.fouls {
+		width: 100%;
+		height: 20vh;
+	}
+
+	#extras {
+		width: 100%;
+	}
+
+	#timer-text {
+		font-size: 1.2rem;
+		height: 10vh;
+	}
+
+	#timer-start-btn,
+	#timer-stop-btn,
+	#timer-reset-btn,
+	#reset-btn {
+		padding: 2px 6px;
+	}
+}

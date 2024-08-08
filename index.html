@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Responsive Counter</title>
+		<link rel="stylesheet" href="index.css" />
+		<link
+			href="https://fonts.cdnfonts.com/css/cursed-timer-ulil"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<h3>HOME</h3>
+				<div class="points-con">
+					<p id="home-points">12</p>
+				</div>
+				<div class="points-mod">
+					<button onclick="homeAddOne()" class="points-btn add-one">+1</button>
+					<button onclick="homeAddTwo()" class="points-btn add-two">+2</button>
+					<button onclick="homeAddThree()" class="points-btn add-three">
+						+3
+					</button>
+				</div>
+				<div class="fouls">
+					<p id="home-foul-text">Home Fouls: </p>
+					<button onclick="homeFouls()" id="home-fouls">+1</button>
+				</div>
+			</div>
+			<div id="extras">
+				<h3>EXTRAS</h3>
+        <div class="timer-con">
+          <p id="timer-text"><span id="minutes">00</span>:<span id="seconds">00</span></span></p>
+          <button id="timer-start-btn" onclick="startTimer()">Start</button>
+          <button id="timer-stop-btn" onclick="stopTimer()">Stop</button>
+        </div>
+        <div class="reset-con">
+          <button id="reset-btn" onclick="resetGame()">Reset Game</button>
+        </div>
+			</div>
+			<div>
+				<h3>GUEST</h3>
+				<div class="points-con">
+					<p id="guest-points">16</p>
+				</div>
+				<div class="points-mod">
+					<button onclick="guestAddOne()" class="points-btn add-one">+1</button>
+					<button onclick="guestAddTwo()" class="points-btn add-two">+2</button>
+					<button onclick="guestAddThree()" class="points-btn add-three">
+						+3
+					</button>
+				</div>
+				<div class="fouls">
+					<p id="guest-foul-text">Guest Fouls: </p>
+					<button onclick="guestFouls()" id="guest-fouls">+1</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="index.js"></script>
+	</body>
+</html>
