@@ -237,6 +237,10 @@ body {
 		height: 30vh;
 	}
 
+	#extras {
+		margin: 15px auto;
+	}
+
 	.fouls {
 		width: 45vw;
 	}
